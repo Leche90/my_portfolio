@@ -1,14 +1,13 @@
-// -----------------------------------------------------------------------------
+// ----
 // lib/data.ts
 // Single source of truth for portfolio content. Swap these mock values for
 // your real projects, metrics, and copy — every component below reads from
 // here, so editing this file is enough to re-skin the whole site.
-// -----------------------------------------------------------------------------
+// ----
 
 import type { LucideIcon } from "lucide-react";
 import {
   Boxes,
-  Braces,
   Cloud,
   Database,
   GitBranch,
@@ -18,11 +17,12 @@ import {
   Mail,
   Server,
   ShieldCheck,
-  Terminal,
-  Workflow
+  Workflow,
+  Code,
+  Network
 } from "lucide-react";
 
-// ---- Hero -------------------------------------------------------------------
+// ---- Hero ----
 
 export const heroContent = {
   eyebrowRoles: [
@@ -238,8 +238,7 @@ export const projects: Project[] = [
     slug: "churchapp",
     name: "ChurchApp",
     tagline: "All-in-one community management and communications platform",
-    description:
-      "A centralized dashboard platform designed to organize community directories, manage member lists, and handle organizational updates smoothly.",
+    description: "A centralized dashboard platform designed to organize community directories, manage member lists, and handle organizational updates smoothly.",
     stack: ["React", "TypeScript", "Vite", "CSS Systems", "Cloud Deployment"],
     size: "md",
     accent: "indigo",
@@ -307,98 +306,263 @@ export const projects: Project[] = [
 export type TechItem = {
   id: string;
   label: string;
-  category: "frontend" | "backend" | "devops" | "architecture";
+  category: "frontend" | "backend" | "database" | "frameworks" | "devops" | "architecture";
   dependsOn: string[]; // ids of related technologies, highlighted on hover
   useCase: string;
   mastery: "core" | "advanced" | "working";
 };
 
-export const techMatrix: TechItem[] = [
-  // Frontend
-  { id: "react", label: "React", category: "frontend", dependsOn: ["nextjs", "typescript"], useCase: "Primary UI library across all client work", mastery: "core" },
-  { id: "nextjs", label: "Next.js", category: "frontend", dependsOn: ["react", "vercel"], useCase: "Default framework for production apps since 2021", mastery: "core" },
-  { id: "typescript", label: "TypeScript", category: "frontend", dependsOn: ["react", "nodejs"], useCase: "Strict mode on every codebase, no exceptions", mastery: "core" },
-  { id: "tailwind", label: "Tailwind CSS", category: "frontend", dependsOn: ["react"], useCase: "Design-system utility layer for rapid, consistent UI", mastery: "core" },
-  { id: "framer", label: "Framer Motion", category: "frontend", dependsOn: ["react"], useCase: "Scroll-linked and gesture-driven interactions", mastery: "advanced" },
-
-  // Backend
-  { id: "nodejs", label: "Node.js", category: "backend", dependsOn: ["express", "typescript"], useCase: "API and service layer runtime", mastery: "core" },
-  { id: "express", label: "Express", category: "backend", dependsOn: ["nodejs"], useCase: "Lightweight REST services and internal tooling", mastery: "core" },
-  { id: "postgres", label: "PostgreSQL", category: "backend", dependsOn: ["nodejs", "redis"], useCase: "System of record for transactional data", mastery: "core" },
-  { id: "redis", label: "Redis", category: "backend", dependsOn: ["postgres"], useCase: "Caching and rate-limiting hot paths", mastery: "advanced" },
-  { id: "graphql", label: "GraphQL", category: "backend", dependsOn: ["nodejs", "postgres"], useCase: "Typed API layer for composite client queries", mastery: "advanced" },
-
-  // DevOps
-  { id: "docker", label: "Docker", category: "devops", dependsOn: ["kubernetes"], useCase: "Reproducible builds across every environment", mastery: "core" },
-  { id: "kubernetes", label: "Kubernetes", category: "devops", dependsOn: ["docker", "terraform"], useCase: "Orchestration for multi-service production clusters", mastery: "advanced" },
-  { id: "terraform", label: "Terraform", category: "devops", dependsOn: ["kubernetes", "vercel"], useCase: "Infrastructure as code across AWS accounts", mastery: "advanced" },
-  { id: "github-actions", label: "GitHub Actions", category: "devops", dependsOn: ["docker"], useCase: "CI/CD pipelines with staged rollout gates", mastery: "core" },
-  { id: "vercel", label: "Vercel", category: "devops", dependsOn: ["nextjs", "terraform"], useCase: "Edge deployment for front-end applications", mastery: "working" },
-
-  // Architecture
-  { id: "microservices", label: "Microservices", category: "architecture", dependsOn: ["kubernetes", "graphql"], useCase: "Domain-bounded services behind a gateway", mastery: "advanced" },
-  { id: "event-driven", label: "Event-Driven Design", category: "architecture", dependsOn: ["microservices", "redis"], useCase: "Kafka-backed pipelines for async workflows", mastery: "advanced" },
-  { id: "system-design", label: "System Design", category: "architecture", dependsOn: ["microservices", "postgres"], useCase: "Capacity planning and failure-mode analysis", mastery: "core" },
-  { id: "security", label: "Application Security", category: "architecture", dependsOn: ["nodejs", "terraform"], useCase: "Threat modeling and secure-by-default APIs", mastery: "working" }
-];
-
-// ---- Timeline -----------------------------------------------------------
-
-export type TimelineEntry = {
-  id: string;
-  period: string;
-  company: string;
-  role: string;
-  breakthrough: string;
-  details: string[];
-};
-
-export const timeline: TimelineEntry[] = [  
-  {
-    id: "role-2",
-    period: "Jan 2025 — June 2026",
-    company: "Kingmakers International Ministries",
-    role: "Full-Stack Web Developer",
-    breakthrough: "Designed, rebuilt, and launched a premium, responsive church web platform that increased digital community engagement by 300%",
-    details: [
-      "Designed and developed a fully responsive website layout, ensuring a perfect browsing experience across all smartphones, tablets, and desktop computers.",
-      "Optimized front-end code structures and image delivery to slash page loading times, ensuring visitors never bounce due to a slow website.",
-      "Implemented modern SEO best practices and clean navigation paths to dramatically improve search visibility and make finding community information effortless."
-    ]
+export const techMatrix: TechItem[] = [  
+  // ---- FRONTEND ----
+  { id: "react",         
+    label: "React",              
+    category: "frontend",  
+    dependsOn: [],                        
+    useCase: "Building dynamic, highly interactive user interface components.", 
+    mastery: "core" 
   },
-  {
-    id: "role-1",
-    period: "Jan 2020 — December 2022",
-    company: "RetO Foods",
-    role: "Web Developer",
-    breakthrough: "Designed and launched the brand's custom digital ordering catalog, establishing a premium online home for their natural snacks and drinks",
-    details: [
-      "Built a beautiful, responsive digital menu showcasing signature items like Tiger Nuts Drink and fresh Parfaits with instant interactive pricing.",
-      "Optimized front-end asset loading and food photography layouts to deliver a 96% faster ordering speed for health-conscious mobile users.",
-      "Crafted a modern, user-friendly shopping cart experience that made browsing products simple and guided visitors naturally toward order checkouts."
-    ]
+
+  { id: "typescript",    
+    label: "TypeScript",         
+    category: "frontend",  
+    dependsOn: [],                         
+    useCase: "Enforcing strict type safety to prevent layout bugs before runtime.", 
+    mastery: "core" 
+  },
+
+  { id: "nextjs",        
+    label: "Next.js",            
+    category: "frontend",  
+    dependsOn: ["react", "typescript"],    
+    useCase: "Production-ready framework for optimized web applications.", 
+    mastery: "core" 
+  },
+
+  { id: "vue",           
+    label: "Vue",                
+    category: "frontend",  
+    dependsOn: [],                         
+    useCase: "Flexible interface tool for creating lightweight, responsive customer views.", 
+    mastery: "core" 
+  },
+
+  { id: "tailwind",      
+    label: "Tailwind CSS",       
+    category: "frontend",  
+    dependsOn: [],                         
+    useCase: "Crafting modern, fluid, and conversion-optimized visual design systems.", 
+    mastery: "core" 
+  },
+
+  { id: "framer-motion", 
+    label: "Framer Motion",      
+    category: "frontend",  
+    dependsOn: ["react"],                  
+    useCase: "Creating smooth, premium layout animations to enhance user engagement.", 
+    mastery: "core" 
+  },
+
+  { id: "lucide",        
+    label: "Lucide React",       
+    category: "frontend",  
+    dependsOn: ["react"],                  
+    useCase: "Rendering clean, recognizable visual iconography across menus.", 
+    mastery: "core" 
+  },
+
+  // ---- BACKEND ----
+  { id: "nodejs",        
+    label: "Node.js",            
+    category: "backend",   
+    dependsOn: [],                         
+    useCase: "Fast runtime engine for running high-performance web applications.", 
+    mastery: "core" 
+  },
+
+  { id: "express",       
+    label: "Express",            
+    category: "backend",   
+    dependsOn: ["nodejs"],                 
+    useCase: "Lightweight routing structure for handling fast API checkouts.", 
+    mastery: "core" 
+  },
+    
+  { id: "php",           
+    label: "PHP",                
+    category: "backend",   
+    dependsOn: [],                         
+    useCase: "Reliable programming language powering modern dynamic web projects.", 
+    mastery: "core" 
+  },
+
+  { id: "ruby",          
+    label: "Ruby",               
+    category: "backend",   
+    dependsOn: [],                         
+    useCase: "Clean, object-oriented language optimized for rapid application building.", 
+    mastery: "core" 
+  },
+
+  { id: "python",        
+    label: "Python",             
+    category: "backend",   
+    dependsOn: [],                         
+    useCase: "Versatile language utilized for system automation and data scripting tasks.", 
+    mastery: "core" 
+  },
+
+  { id: "laravel",       
+    label: "Laravel",            
+    category: "backend",   
+    dependsOn: ["php"],                    
+    useCase: "Powerful web ecosystem for secure database routing and business logic.", 
+    mastery: "core" 
+  },
+
+  // ---- DATABASE ----
+  { id: "postgres",      
+    label: "PostgreSQL",         
+    category: "database",  
+    dependsOn: [],                         
+    useCase: "Primary relational storage for highly organized business data directories.", 
+    mastery: "core" 
+  },
+
+  { id: "mongodb",       
+    label: "MongoDB",            
+    category: "database",  
+    dependsOn: [],                         
+    useCase: "Flexible, document-based NoSQL storage for rapid profile updates.", 
+    mastery: "core" 
+  },
+
+  { id: "mysql",         
+    label: "MySQL",              
+    category: "database",  
+    dependsOn: [],                         
+    useCase: "Industry-standard relational system for tracking catalog assets securely.", 
+    mastery: "core" 
+  },
+
+  { id: "mariadb",       
+    label: "MariaDB",            
+    category: "database",  
+    dependsOn: [],                         
+    useCase: "High-performance relational store optimized for speed and stability.", 
+    mastery: "core" 
+  },
+
+  // ---- DEVOPS ----
+  { id: "docker",        
+    label: "Docker",             
+    category: "devops",    
+    dependsOn: [],                         
+    useCase: "Packaging applications to run identically across all cloud setups.", 
+    mastery: "core" 
+  },
+
+  { id: "render",        
+    label: "Render",             
+    category: "devops",    
+    dependsOn: ["docker"],                 
+    useCase: "Automated cloud hosting and continuous web service management.", 
+    mastery: "core" 
+  },
+
+  { id: "github-actions",
+    label: "GitHub Actions",     
+    category: "devops",    
+    dependsOn: [],                         
+    useCase: "Automated test checking pipelines triggered on every code save.", 
+    mastery: "core" 
+  },
+
+  { id: "vercel",        
+    label: "Vercel",             
+    category: "devops",    
+    dependsOn: ["nextjs"],                 
+    useCase: "Ultra-fast edge deployment platform for smooth user interfaces.", 
+    mastery: "core" 
+  },
+
+  // ---- ARCHITECTURE ----
+  { id: "ssr",               
+    label: "Server-Side Rendering (SSR)",        
+    category: "architecture", 
+    dependsOn: ["nextjs", "nodejs"],              
+    useCase: "Dynamically computing layouts on the host to reduce initial load times.", 
+    mastery: "core" 
+  },
+
+  { id: "ssg",               
+    label: "Static Site Generation (SSG)",       
+    category: "architecture", 
+    dependsOn: ["nextjs"],                        
+    useCase: "Pre-compiling page assets to achieve maximum delivery speeds at the edge.", 
+    mastery: "core" 
+  },
+
+  { id: "spa",               
+    label: "Single Page Application (SPA)",      
+    category: "architecture", 
+    dependsOn: ["react", "vue"],                  
+    useCase: "Decoupling view states to enable client-side routing with zero page reloads.", 
+    mastery: "core" 
+  },
+
+  { id: "component-ui",      
+    label: "Component-Based UI Architecture",    
+    category: "architecture", 
+    dependsOn: ["react", "vue", "nextjs"],        
+    useCase: "Designing modular layout patterns that maintain predictable, clean data flows.", 
+    mastery: "core" 
+  },
+
+  { id: "mvc",               
+    label: "MVC Architecture",                   
+    category: "architecture", 
+    dependsOn: ["laravel", "express"],            
+    useCase: "Separating data rules, layout interfaces, and routing logic systematically.", 
+    mastery: "core" 
+  },
+
+  { id: "client-server",     
+    label: "Client-Server Architecture",         
+    category: "architecture", 
+    dependsOn: ["nextjs", "express", "laravel"],  
+    useCase: "Establishing clean operational boundaries between interfaces and backend databases.", 
+    mastery: "core" 
+  },
+
+  { id: "relational-modeling",
+    label:"Relational Database Modeling",       
+    category: "architecture", 
+    dependsOn: ["mysql", "postgres", "mariadb"],  
+    useCase: "Structuring relational schemas that protect data integrity via strict mapping rules.", 
+    mastery: "core" 
+  },
+
+  { id: "rest-api-design",   
+    label: "RESTful API Architecture",           
+    category: "architecture", 
+    dependsOn: ["express", "laravel"],            
+    useCase: "Exposing predictable stateless connections using explicit, standardized HTTP rules.", 
+    mastery: "core" 
+  },
+
+  { id: "async-processing",  
+    label: "Asynchronous Execution Flow",        
+    category: "architecture", 
+    dependsOn: ["nodejs", "python"],              
+    useCase: "Offloading heavy database logic to background workers so interfaces never freeze.", 
+    mastery: "core" 
+  },
+
+  { id: "auth-architecture", 
+    label: "Token-Based Authentication",         
+    category: "architecture", 
+    dependsOn: ["express", "laravel"],             
+    useCase: "Implementing stateless security patterns across application borders to protect sessions.", 
+    mastery: "core" 
   }
-];
-
-// ---- Contact / Socials ----------------------------------------------------
-
-export const socials: {
-  id: string;
-  label: string;
-  href: string;
-  icon: LucideIcon;
-}[] = [
-  { id: "github", label: "GitHub", href: "https://github.com/Leche90", icon: Github },
-  { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com/in/lanzemaleche", icon: Linkedin },
-  { id: "email", label: "Email", href: "oldigital@gmail.com", icon: Mail }
-];
-
-export const stackCategoryMeta: Record<
-  TechItem["category"],
-  { label: string; icon: LucideIcon }
-> = {
-  frontend: { label: "Frontend", icon: Layers },
-  backend: { label: "Backend", icon: Server },
-  devops: { label: "DevOps", icon: Terminal },
-  architecture: { label: "Architecture", icon: ShieldCheck }
-};
+]
