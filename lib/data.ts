@@ -1,10 +1,3 @@
-// ----
-// lib/data.ts
-// Single source of truth for portfolio content. Swap these mock values for
-// your real projects, metrics, and copy — every component below reads from
-// here, so editing this file is enough to re-skin the whole site.
-// ----
-
 import type { LucideIcon } from "lucide-react";
 import {
   Boxes,
@@ -97,8 +90,7 @@ export const projects: Project[] = [
     slug: "teachzenith",
     name: "TeachZenith",
     tagline: "AI-powered job matching platform for international teachers in Nigeria",
-    description:
-      "An automated global career connector built to intelligently match qualified teachers in Nigeria with verified global school openings using high-speed matching pipelines.",
+    description: "An automated global career connector built to intelligently match qualified teachers in Nigeria with verified global school openings using high-speed matching pipelines.",
     stack: ["Next.js", "Node.js", "PostgreSQL", "Redis", "Kafka", "AWS"],
     size: "md",
     accent: "indigo",
@@ -166,8 +158,7 @@ export const projects: Project[] = [
     slug: "retofoods",
     name: "RetOFoods",
     tagline: "Custom brand catalog and digital ordering platform for healthy Nigerian snacks",
-    description:
-      "A fast, modern web menu built for an authentic snack brand. Showcases their premium signature products—including natural Tiger Nuts Drink, fresh Parfaits, crispy ChinChin, and real fruit Smoothies - making it simple for health-conscious customers to order healthy treats.",
+    description: "A fast, modern web menu built for an authentic snack brand. Showcases their premium signature products—including natural Tiger Nuts Drink, fresh Parfaits, crispy ChinChin, and real fruit Smoothies - making it simple for health-conscious customers to order healthy treats.",
     stack: ["TypeScript", "Vite", "Tailwind CSS", "Interactive UI"],
     size: "md",
     accent: "cyan",
@@ -566,3 +557,12 @@ export const techMatrix: TechItem[] = [
     mastery: "core" 
   }
 ]
+
+export const stackCategoryMeta = {
+  frontend: { label: "Frontend UI", icon: Layers },
+  backend: { label: "Backend Runtimes", icon: Server },
+  frameworks: { label: "Framework Ecosystems", icon: Code },
+  database: { label: "Database Storage", icon: Database },
+  devops: { label: "Cloud & DevOps", icon: Cloud },
+  architecture: { label: "System Architecture", icon: Network }
+};

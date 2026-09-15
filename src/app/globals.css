@@ -1,6 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../../tailwind.config.ts";
+
+@theme {
+  --color-blood: #d9412a;
+  --color-paper: #f9f8f6;
+  --color-paper-deep: #efece6;
+  --color-ink: #0f0e0c;
+  --color-ink-muted: #6e6b64;
+  --color-ink-line: #e1ddd5;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: var(--font-jetbrains), monospace;
+
+  --text-micro: 0.625rem;
+  --text-micro--line-height: 1rem;
+
+  --tracking-tightest: -0.04em;
+  --tracking-wider-mono: 0.16em;
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 @layer base {
   html {
@@ -8,7 +29,6 @@
   }
 
   body {
-    /* Subtle paper texture using CSS noise */
     background-image:
       radial-gradient(circle at 20% 50%, rgba(217, 65, 42, 0.02) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, rgba(15, 14, 12, 0.02) 0%, transparent 50%);
@@ -16,35 +36,30 @@
   }
 
   ::selection {
-    background-color: theme('colors.blood.DEFAULT');
-    color: theme('colors.paper.DEFAULT');
+    background-color: var(--color-blood);
+    color: var(--color-paper);
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: theme('colors.paper.deep');
+    background: var(--color-paper-deep);
   }
   ::-webkit-scrollbar-thumb {
-    background: theme('colors.ink.muted');
-    border: 3px solid theme('colors.paper.deep');
+    background: var(--color-ink-muted);
+    border: 3px solid var(--color-paper-deep);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors.ink.DEFAULT');
+    background: var(--color-ink);
   }
 }
 
 @layer components {
-  /* Reusable components for The Index */
-
-  /* Marginalia label — like notes in book margins */
   .marginalia {
     @apply font-mono text-micro uppercase tracking-wider-mono text-ink-muted;
   }
 
-  /* Editorial section title */
   .editorial-title {
     @apply font-display font-light text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tightest text-ink;
   }
@@ -53,12 +68,10 @@
     @apply font-serif italic font-normal text-blood;
   }
 
-  /* The "page number" pill */
   .page-marker {
     @apply font-mono text-micro tracking-wider-mono text-ink-muted px-2 py-1 border border-ink-line;
   }
 
-  /* Index entry — used for projects/services/skills */
   .index-entry {
     @apply group flex items-baseline gap-4 py-5 border-b border-ink-line transition-all duration-500 ease-editorial;
   }
@@ -67,12 +80,11 @@
     @apply pl-2;
   }
 
-  /* Underline animation */
   .editorial-link {
     @apply relative inline-block;
   }
   .editorial-link::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-500 ease-editorial;
   }
   .editorial-link:hover::after {
@@ -81,12 +93,10 @@
 }
 
 @layer utilities {
-  /* Roman numeral formatting helper */
   .font-roman {
-    font-feature-settings: 'lnum' 1;
+    font-feature-settings: "lnum" 1;
   }
 
-  /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
