@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: theme("colors.line");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme("colors.bg");
+  color: theme("colors.ink");
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+
+/* Base structural grid wash across the page */
+.bg-canvas {
+  background-color: theme("colors.bg");
+  background-image: theme("backgroundImage.grid-lines");
+  background-size: 64px 64px;
+}
+
+/* Hide the native cursor only where the custom cursor is active (fine pointer, no reduced motion) */
+/* @media (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none !important;
+  }
+} */
+
+::selection {
+  background: theme("colors.indigo.DEFAULT");
+  color: theme("colors.bg");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: theme("colors.bg");
+}
+::-webkit-scrollbar-thumb {
+  background: theme("colors.line");
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.faint");
+}
+
+/* Keyboard focus visibility, always preserved regardless of custom cursor */
+:focus-visible {
+  outline: 2px solid theme("colors.cyan.DEFAULT");
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.mono-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
