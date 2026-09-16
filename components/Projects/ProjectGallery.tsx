@@ -21,10 +21,10 @@ export default function ProjectGallery() {
           className="max-w-2xl"
         >
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-            Applications Built for Real-World Impact
+            Production-Ready Systems. Real-World Outcomes.
           </h2>
           <p className="mt-4 text-balance text-muted">
-            Talk is cheap in the digital space, but real user experiences don't lie. I build things differently - applications that are not only visually appealing but also functional, efficient, and impactful. Below are some of the projects I've worked on - each designed to solve real-world problems and enhance user experiences.
+            I build high-performance web applications that bridge the gap between complex backend logic and conversion-focused design. Every project below highlights a specific problem solved, a modern tech stack leveraged, and the tangible business metrics delivered.
           </p>
         </motion.div>
 

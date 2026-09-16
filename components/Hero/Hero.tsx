@@ -86,7 +86,7 @@ export default function Hero() {
               href="#projects"
               className="group inline-flex items-center gap-2 rounded-full bg-indigo px-8 py-4 font-semibold text-ink shadow-glow-indigo transition-all hover:scale-[1.02] hover:bg-indigo-soft"
               >
-              View Featured Work
+              View My Projects
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </Magnetic>
@@ -107,7 +107,7 @@ export default function Hero() {
         animate="show"
         className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-10 sm:px-10"
       >
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4 shadow-xl">
+        {/* <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4 shadow-xl">
           {heroContent.metrics.map((metric) => (
             <div key={metric.label} className="bg-panel/95 px-6 py-6 backdrop-blur-sm transition-colors hover:bg-panel/50">
               <div className="font-display text-3xl font-bold text-ink sm:text-4xl">
@@ -116,7 +116,7 @@ export default function Hero() {
               <div className="mt-1 text-xs text-muted">{metric.label}</div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="mt-8 flex justify-center text-faint">
           <ArrowDown className="h-4 w-4 animate-bounce" />

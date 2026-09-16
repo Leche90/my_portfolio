@@ -19,18 +19,18 @@ import {
 
 export const heroContent = {
   eyebrowRoles: [
-    "WEBSITES FOR BUSINESSES",
-    "CHURCHES AND BRANDS",
-    "BUILT TO BE USED"
+    "CUSTOM WEB & MOBILE APPS",
+    "FULL-STACK SOLUTIONS",
+    "FAST & SECURE SYSTEMS"
   ],
-  headlineLines: ["Your site should make the next step obvious", "on a phone, in under three seconds."],
+  headlineLines: ["I build and optimise websites and apps", "that work beautifully."],
   subhead:
-    "I am Lanzema Leche, a web developer in Winnipeg. I design and build marketing sites, catalogs, and simple products for people who cannot afford a vague six-month build. You get a clear structure, fast pages, and a site you can actually update.",
+    "I build high-performance web and mobile apps with clean, modern interfaces and bulletproof backend code. My focus is on creating responsive digital experiences that load instantly, work flawlessly on mobile, and deliver a seamless user experience.",
   metrics: [
-    { label: "Based in", value: "Winnipeg" },
-    { label: "First version", value: "Weeks" },
-    { label: "Built for", value: "Phones" },
-    { label: "You talk to", value: "Me" }
+    { label: "Years Experience", value: "3+" },
+    { label: "Happy Users", value: "100k+" },
+    { label: "Saved Infrastructure Costs", value: "25%" },
+    { label: "Daily Customer Interactions", value: "2M+" }
   ]
 };
 
