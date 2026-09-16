@@ -78,7 +78,7 @@ export default function ContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             onBlur={() => setTouched((t) => ({ ...t, name: true }))}
-            placeholder="Jordan Lee"
+            placeholder="Your name"
             className={fieldClasses(nameState)}
           />
           {nameState === "invalid" && (
@@ -104,7 +104,7 @@ export default function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onBlur={() => setTouched((t) => ({ ...t, email: true }))}
-            placeholder="jordan@company.com"
+            placeholder="Your email address"
             className={fieldClasses(emailState)}
           />
           {emailState === "invalid" && (
@@ -121,7 +121,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="mb-2 block text-sm text-muted">
-          Message
+          What are we building?
         </label>
         <textarea
           id="message"
@@ -129,11 +129,11 @@ export default function ContactForm() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onBlur={() => setTouched((t) => ({ ...t, message: true }))}
-          placeholder="Tell me about the system you're building..."
+          placeholder="Share your current website link, what it needs to achieve, and your ideal launch date."
           className={cn(fieldClasses(messageState), "resize-none")}
         />
         {messageState === "invalid" && (
-          <p className="mt-1.5 text-xs text-rose">Say a little more — at least 10 characters.</p>
+          <p className="mt-1.5 text-xs text-rose">Please add a few details so I can build your roadmap.</p>
         )}
       </div>
 
@@ -145,11 +145,11 @@ export default function ContactForm() {
       >
         {submitState === "sending" ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" /> Sending...
+            <Loader2 className="h-4 w-4 animate-spin" /> Submitting...
           </>
         ) : (
           <>
-            <Send className="h-4 w-4" /> Send message
+            <Send className="h-4 w-4" /> Send
           </>
         )}
       </button>

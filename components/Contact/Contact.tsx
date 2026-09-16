@@ -15,12 +15,10 @@ export default function Contact() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-            Building something that needs to scale?
+            Let’s Map Out Your Solution
           </h2>
           <p className="mt-4 max-w-md text-balance text-muted">
-            I&apos;m open to full-stack and backend-leaning roles, and to
-            select contract work on systems with real engineering problems.
-            Reach out directly, or find me here.
+            Share your current website link, the primary action you want visitors to take, and your ideal launch date. I will review your goals and map out a clear roadmap for the first version.
           </p>
           <div className="mt-8">
             <MagneticSocials />
