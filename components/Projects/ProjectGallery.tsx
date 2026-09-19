@@ -21,10 +21,10 @@ export default function ProjectGallery() {
           className="max-w-2xl"
         >
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-            Production-Ready Systems. Real-World Outcomes.
+            Selected Work
           </h2>
           <p className="mt-4 text-balance text-muted">
-            I build high-performance web applications that bridge the gap between complex backend logic and conversion-focused design. Every project below highlights a specific problem solved, a modern tech stack leveraged, and the tangible business metrics delivered.
+            AI matching for Nigerian teachers seeking jobs abroad. A website for a snack brand sells from. A church site with events, giving, and live stream.
           </p>
         </motion.div>
 

@@ -64,10 +64,9 @@ export default function ContactForm() {
         className="flex flex-col items-center gap-3 rounded-2xl border border-green/30 bg-green/5 px-6 py-14 text-center"
       >
         <CheckCircle2 className="h-8 w-8 text-green" />
-        <p className="font-display text-lg font-semibold text-ink">Message sent</p>
+        <p className="font-display text-lg font-semibold text-ink">Message sent successfully!</p>
         <p className="max-w-xs text-sm text-muted">
-          Thanks for reaching out — I read every message and reply within a
-          couple of days.
+          Check your inbox. I will reply to you shortly. If it is urgent, use the Email button on the left.
         </p>
       </motion.div>
     );

@@ -228,8 +228,8 @@ export const projects: Project[] = [
   {
     slug: "kingmakers",
     name: "Kingmakers International Ministries",
-    tagline: "All-in-one community management and communications platform",
-    description: "A centralized dashboard platform designed to organize community directories, manage member lists, and handle organizational updates smoothly.",
+    tagline: "All-in-one church management and communications platform",
+    description: "A church site built from a blank page. Belief, vision, events, address, online giving, and live stream sit on one site so a first-time visitor knows where they are and what to do next.",
     stack: ["React", "TypeScript", "Vite", "CSS Systems", "Cloud Deployment"],
     size: "md",
     accent: "indigo",
@@ -297,7 +297,7 @@ export const projects: Project[] = [
 export type TechItem = {
   id: string;
   label: string;
-  category: "frontend" | "backend" | "database" | "frameworks" | "devops" | "architecture";
+  category: "frontend" | "backend" | "database" | "devops" | "architecture";
   dependsOn: string[]; // ids of related technologies, highlighted on hover
   useCase: string;
   mastery: "core" | "advanced" | "working";
@@ -561,7 +561,6 @@ export const techMatrix: TechItem[] = [
 export const stackCategoryMeta = {
   frontend: { label: "Frontend UI", icon: Layers },
   backend: { label: "Backend Runtimes", icon: Server },
-  frameworks: { label: "Framework Ecosystems", icon: Code },
   database: { label: "Database Storage", icon: Database },
   devops: { label: "Cloud & DevOps", icon: Cloud },
   architecture: { label: "System Architecture", icon: Network }
