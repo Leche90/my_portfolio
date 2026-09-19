@@ -33,20 +33,28 @@ export default function ContactForm() {
       state === "empty" && "border-line focus:border-cyan/50"
     );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setTouched({ name: true, email: true, message: true });
     if (!isValid) return;
 
-    // ---------------------------------------------------------------------
-    // SWAP-IN: replace with a real submission (API route, Formspree, email
-    // service, etc). This mock just simulates network latency.
-    // ---------------------------------------------------------------------
     setSubmitState("sending");
-    setTimeout(() => {
+    try {
+      const res = await fetch("https://formspree.io/f/mljdggwk", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) throw new Error("Request failed");
       setSubmitState("sent");
-    }, 1200);
-  };
+      } catch {
+        setSubmitState("idle");
+        alert("Could not send. Email me directly and I will reply.");
+      }
+    };
 
   if (submitState === "sent") {
     return (

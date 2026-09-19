@@ -46,11 +46,10 @@ export default function TechStackMatrix() {
           className="max-w-2xl"
         >
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-            The stack, and how it fits together
+            How I Usually Build
           </h2>
           <p className="mt-4 text-balance text-muted">
-            Hover any technology to see what it depends on and where it shows
-            up in production — this isn&apos;t a list of logos, it&apos;s a system.
+              I start with the interface the visitor uses, then the data and hosting that keep it up. Hover a tool to see what it pairs with. I do not use every item on every job.
           </p>
         </motion.div>
 

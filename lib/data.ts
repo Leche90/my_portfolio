@@ -578,10 +578,33 @@ export type TimelineEntry = {
 export const timeline: TimelineEntry[] = [];
 
 export type SocialLink = {
+  id: string;
   name: string;
   href: string;
   label: string;
   icon: LucideIcon;
 };
 
-export const socials: SocialLink[] = [];
+export const socials: SocialLink[] = [
+  {
+    id: "github",
+    name: "GitHub",
+    href: "https://github.com/Leche90",
+    label: "GitHub",
+    icon: Github,
+  },
+  {
+    id: "linkedin",
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/lanzemaleche",
+    label: "LinkedIn",
+    icon: Linkedin,
+  },
+  {
+    id: "email",
+    name: "Email",
+    href: "oldigital07@gmail.com",
+    label: "Email",
+    icon: Mail,
+  },
+];

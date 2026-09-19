@@ -55,7 +55,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="mailto:hello@yourdomain.com"
+                      href="mailto:oldigital07@gmail.com"
                       className="text-paper/80 hover:text-blood-soft transition-colors text-sm"
                     >
                       Email ↗
@@ -73,7 +73,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
-                      href="https://www.linkedin.com/"
+                      href="https://www.linkedin.com/in/lanzemaleche"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-paper/80 hover:text-blood-soft transition-colors text-sm"

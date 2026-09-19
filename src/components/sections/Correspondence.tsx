@@ -72,7 +72,7 @@ export default function Correspondence() {
           >
             {/* Primary — email */}
             <a
-              href="mailto:hello@yourdomain.com"
+              href="mailto:oldigital07@gmail.com"
               className="group flex items-center justify-between p-6 bg-ink text-paper hover:bg-blood transition-colors duration-300"
             >
               <div className="flex flex-col gap-1">
@@ -103,7 +103,7 @@ export default function Correspondence() {
               </a>
 
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/lanzemaleche"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col p-5 border border-ink-line hover:border-ink hover:bg-paper-soft transition-all duration-300"
