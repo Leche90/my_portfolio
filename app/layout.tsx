@@ -28,13 +28,13 @@ const jetbrainsMono = JetBrains_Mono({
 // SWAP-IN: update with your real name, role, and social preview details.
 // ---------------------------------------------------------------------------
 export const metadata: Metadata = {
-  title: "Lanzema Leche — Full-Stack Full-Stack Web Developer",
+  title: "Lanzema Leche · Full-Stack Web Developer",
   description:
-    "I build websites and apps from start to finish — the parts you see and the parts that make them work behind the scenes.",
+    "Winnipeg-based web developer. Marketing sites, catalogs, and small products that load fast, work on phones, and make the next step obvious.",
   openGraph: {
-    title: "Lanzema Leche — Full-Stack Web Developer",
+    title: "Lanzema Leche · Full-Stack Web Developer",
     description:
-      "I build websites and apps from start to finish — the parts you see and the parts that make them work behind the scenes.",
+      "Built for speed, clear structures, and easy updates.",
     type: "website"
   }
 };

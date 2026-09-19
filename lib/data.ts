@@ -89,7 +89,7 @@ export const projects: Project[] = [
   {
     slug: "teachzenith",
     name: "TeachZenith",
-    tagline: "AI-powered job matching platform for international teachers in Nigeria",
+    tagline: "AI-powered job matching platform for Nigeria interested in going abroad",
     description: "An automated global career connector built to intelligently match qualified teachers in Nigeria with verified global school openings using high-speed matching pipelines.",
     stack: ["Next.js", "Node.js", "PostgreSQL", "Redis", "Kafka", "AWS"],
     size: "md",
@@ -156,9 +156,9 @@ export const projects: Project[] = [
   },
   {
     slug: "retofoods",
-    name: "RetOFoods",
-    tagline: "Custom brand catalog and digital ordering platform for healthy Nigerian snacks",
-    description: "A fast, modern web menu built for an authentic snack brand. Showcases their premium signature products—including natural Tiger Nuts Drink, fresh Parfaits, crispy ChinChin, and real fruit Smoothies - making it simple for health-conscious customers to order healthy treats.",
+    name: "RetO Foods",
+    tagline: "Custom digital ordering platform for healthy Nigerian snacks",
+    description: "A fast, and modern applicaion built for RetO Foods showcasing their premium signature products - including natural Tiger Nuts Drink, fresh Parfaits, crispy ChinChin, and real fruit Smoothies - making it seamless for new and returning customers to place their orders.",
     stack: ["TypeScript", "Vite", "Tailwind CSS", "Interactive UI"],
     size: "md",
     accent: "cyan",
@@ -226,8 +226,8 @@ export const projects: Project[] = [
     }
   },
   {
-    slug: "churchapp",
-    name: "ChurchApp",
+    slug: "kingmakers",
+    name: "Kingmakers International Ministries",
     tagline: "All-in-one community management and communications platform",
     description: "A centralized dashboard platform designed to organize community directories, manage member lists, and handle organizational updates smoothly.",
     stack: ["React", "TypeScript", "Vite", "CSS Systems", "Cloud Deployment"],

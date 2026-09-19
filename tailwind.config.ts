@@ -21,7 +21,7 @@ const config: Config = {
           deep: "#EFECE6",
         },
         ink: {
-          DEFAULT: "#0F0E0C",
+          DEFAULT: "#E9ECF4",
           muted: "#6E6B64",
           line: "#E1DDD5",
         },

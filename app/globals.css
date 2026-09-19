@@ -16,7 +16,7 @@ html {
 
 body {
   background-color: theme("colors.bg");
-  color: theme("colors.ink");
+  color: theme("colors.ink.DEFAULT");
   font-feature-settings: "ss01" on, "cv01" on;
 }
 
