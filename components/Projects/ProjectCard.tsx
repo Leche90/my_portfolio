@@ -23,7 +23,7 @@ export default function ProjectCard({
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
       className={cn(
-        "group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border border-line bg-panel p-6 text-left transition-colors",
+        "group relative flex min-h-[220px] h-full w-full flex-col justify-between overflow-hidden rounded-2xl border border-line bg-panel p-6 text-left transition-colors",
         accentBorder
       )}
     >

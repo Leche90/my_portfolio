@@ -127,8 +127,7 @@ export const projects: Project[] = [
       ],
       edges: [
         { from: "client", to: "gateway" },
-        { from: "gateway", to: "service" },
-        { from: "service", to: "db" }
+        { from: "gateway", to: "db" }
       ]
     },
     performance: {
@@ -602,7 +601,7 @@ export const socials: SocialLink[] = [
   {
     id: "email",
     name: "Email",
-    href: "oldigital07@gmail.com",
+    href: "mailto:oldigital07@gmail.com",
     label: "Email",
     icon: Mail,
   },

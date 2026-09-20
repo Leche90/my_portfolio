@@ -22,7 +22,7 @@ const item = {
 export default function Hero() {
   return (
     <section
-      id="top"
+      id="home"
       className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden border-b border-line"
     >
       <div className="absolute inset-0 bg-radial-fade" />

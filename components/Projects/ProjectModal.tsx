@@ -4,9 +4,6 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import type { Project } from "@/lib/data";
-import ArchitectureExplainer from "./ArchitectureExplainer";
-import PerformanceToggle from "./PerformanceToggle";
-import MiniLab from "./MiniLab";
 
 export default function ProjectModal({
   project,
@@ -32,7 +29,7 @@ export default function ProjectModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-bg/80 px-4 py-8 backdrop-blur-sm sm:items-center sm:px-6"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-bg/80 px-4 py-8 backdrop-blur-sm sm:px-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="project-modal-title"
@@ -45,15 +42,17 @@ export default function ProjectModal({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 24, scale: 0.98 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-4xl rounded-2xl border border-line bg-panel"
+        className="relative w-full max-w-2xl max-h-[min(90vh,900px)] overflow-y-auto rounded-2xl border border-line bg-panel"
       >
-        <div className="flex items-start justify-between gap-4 border-b border-line px-6 py-5 sm:px-8">
+        <div className="flex items-start justify-between gap-4 px-6 py-5 sm:px-8">
           <div>
-            <p className="font-mono text-xs text-cyan">{project.metricBadge}</p>
-            <h3 id="project-modal-title" className="mt-1 font-display text-2xl font-semibold text-ink sm:text-3xl">
+            <h3
+              id="project-modal-title"
+              className="font-display text-2xl font-semibold text-ink sm:text-3xl"
+            >
               {project.name}
             </h3>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
               {project.description}
             </p>
           </div>
@@ -69,20 +68,15 @@ export default function ProjectModal({
           </button>
         </div>
 
-        <div className="flex flex-wrap gap-2 px-6 pt-5 sm:px-8">
+        <div className="flex flex-wrap gap-2 px-6 pb-8 sm:px-8">
           {project.stack.map((tech) => (
-            <span key={tech} className="rounded-full border border-line-soft px-3 py-1 text-xs text-faint">
+            <span
+              key={tech}
+              className="rounded-full border border-line-soft px-3 py-1 text-xs text-faint"
+            >
               {tech}
             </span>
           ))}
-        </div>
-
-        <div className="grid gap-4 p-6 sm:grid-cols-2 sm:p-8">
-          <div className="sm:col-span-2">
-            <ArchitectureExplainer project={project} />
-          </div>
-          <PerformanceToggle project={project} />
-          <MiniLab project={project} />
         </div>
       </motion.div>
     </div>

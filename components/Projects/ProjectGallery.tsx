@@ -11,7 +11,7 @@ export default function ProjectGallery() {
   const activeProject = projects.find((p) => p.slug === activeSlug) ?? null;
 
   return (
-    <section id="projects" className="border-b border-line px-6 py-28 sm:px-10">
+    <section id="projects" className="border-b border-line px-6 py-16 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -21,14 +21,14 @@ export default function ProjectGallery() {
           className="max-w-2xl"
         >
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-            Selected Work
+            Projects I've Built
           </h2>
           <p className="mt-4 text-balance text-muted">
             AI matching for Nigerian teachers seeking jobs abroad. A website for a snack brand sells from. A church site with events, giving, and live stream.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-4 sm:auto-rows-[180px]">
+        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.slug}

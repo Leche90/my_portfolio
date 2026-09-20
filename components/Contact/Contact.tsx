@@ -6,7 +6,7 @@ import MagneticSocials from "./MagneticSocials";
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 py-28 sm:px-10">
+    <section id="contact" className="px-6 py-16 sm:px-10">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

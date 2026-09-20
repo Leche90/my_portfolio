@@ -18,7 +18,7 @@ export default function NavBar() {
       className="fixed inset-x-0 top-0 z-40 border-b border-line/60 bg-bg/70 backdrop-blur-md"
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
-        <a href="#top" data-cursor-pointer className="font-display text-sm font-semibold tracking-tight text-ink">
+        <a href="#home" data-cursor-pointer className="font-display text-sm font-semibold tracking-tight text-ink">
           Lanzema Leche
         </a>
         <ul className="hidden items-center gap-8 sm:flex">
