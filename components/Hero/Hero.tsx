@@ -93,7 +93,7 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 font-medium text-ink transition-colors hover:border-cyan/50 hover:text-cyan"
             >
-              Let's Talk
+              Let's Do Business
             </a>
           </Magnetic>
         </motion.div>
