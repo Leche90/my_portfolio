@@ -55,6 +55,16 @@ export default function ProjectModal({
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
               {project.description}
             </p>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-sm text-cyan hover:text-ink"
+              >
+                Visit site
+              </a>
+            )}
           </div>
           <button
             ref={closeRef}

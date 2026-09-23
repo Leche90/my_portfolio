@@ -17,7 +17,7 @@ export default function Contact() {
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
             Let’s Map Out Your Solution
           </h2>
-          <p className="mt-4 max-w-md text-balance text-muted">
+          <p className="mt-4 w-full text-balance text-muted">
             Share your current website link, the primary action you want visitors to take, and your ideal launch date. I will review your goals and map out a clear roadmap for the first version.
           </p>
           <div className="mt-8">

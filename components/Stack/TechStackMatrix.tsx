@@ -1,121 +1,77 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { techMatrix, stackCategoryMeta, type TechItem } from "@/lib/data";
-import { cn } from "@/lib/utils";
 
-const masteryLabel: Record<TechItem["mastery"], string> = {
-  core: "Core / daily driver",
-  advanced: "Advanced / production use",
-  working: "Working knowledge"
-};
+const tools = ["Next.js", "React", "TypeScript", "Tailwind", "Node", "PostgreSQL"];
 
-const masteryDot: Record<TechItem["mastery"], string> = {
-  core: "bg-cyan",
-  advanced: "bg-indigo-soft",
-  working: "bg-faint"
-};
+const steps = [
+  {
+    n: "01",
+    title: "We agree the first version",
+    body: "A short call. You show the current site or Instagram. We write down the pages and the one action a visitor must be able to take.",
+  },
+  {
+    n: "02",
+    title: "You get a live draft",
+    body: "I send a working URL, not a slide deck. You click through it on your phone and tell me what is off.",
+  },
+  {
+    n: "03",
+    title: "We launch that version",
+    body: "The first release does the job we wrote down. Extra ideas wait until people are actually using the site.",
+  },
+  {
+    n: "04",
+    title: "You can run it after",
+    body: "You get a site you can update. Small copy and image changes should not require a new project.",
+  },
+];
 
 export default function TechStackMatrix() {
-  const [hovered, setHovered] = useState<string | null>(null);
-
-  const relatedIds = useMemo(() => {
-    if (!hovered) return new Set<string>();
-    const item = techMatrix.find((t) => t.id === hovered);
-    if (!item) return new Set<string>();
-    const ids = new Set<string>([item.id, ...item.dependsOn]);
-    // also include items that depend on the hovered one
-    techMatrix.forEach((t) => {
-      if (t.dependsOn.includes(hovered)) ids.add(t.id);
-    });
-    return ids;
-  }, [hovered]);
-
-  const categories = Object.keys(stackCategoryMeta) as TechItem["category"][];
-  const hoveredItem = hovered ? techMatrix.find((t) => t.id === hovered) : null;
-
   return (
-    <section id="stack" className="border-b border-line px-6 py-28 sm:px-10">
+    <section id="stack" className="border-b border-line px-6 py-16 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
         >
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-            How I Usually Build
+            From First Call to a Site You Can Use
           </h2>
-          <p className="mt-4 text-balance text-muted">
-              I start with the interface the visitor uses, then the data and hosting that keep it up. Hover a tool to see what it pairs with. I do not use every item on every job.
+          <p className="mt-4 text-muted">
+            I work with businesses, and brands that need a public site that looks considered and works on a phone. This is how a project with me usually goes.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-4">
-          {categories.map((category) => {
-            const meta = stackCategoryMeta[category];
-            const Icon = meta.icon;
-            const items = techMatrix.filter((t) => t.category === category);
-            return (
-              <div key={category} className="rounded-2xl border border-line bg-panel p-5">
-                <div className="mb-4 flex items-center gap-2 text-sm font-medium text-ink">
-                  <Icon className="h-4 w-4 text-cyan" />
-                  {meta.label}
-                </div>
-                <div className="flex flex-col gap-2">
-                  {items.map((tech) => {
-                    const isRelated = hovered ? relatedIds.has(tech.id) : true;
-                    const isHovered = hovered === tech.id;
-                    return (
-                      <div key={tech.id} className="relative">
-                        <button
-                          type="button"
-                          data-cursor-pointer
-                          onMouseEnter={() => setHovered(tech.id)}
-                          onMouseLeave={() => setHovered(null)}
-                          onFocus={() => setHovered(tech.id)}
-                          onBlur={() => setHovered(null)}
-                          className={cn(
-                            "flex w-full items-center justify-between rounded-lg border px-3 py-2.5 text-left text-sm transition-all duration-200",
-                            isHovered
-                              ? "border-cyan/50 bg-cyan/10 text-ink"
-                              : isRelated
-                              ? "border-line-soft bg-elevated text-ink/90"
-                              : "border-line-soft bg-elevated text-faint opacity-40"
-                          )}
-                        >
-                          <span>{tech.label}</span>
-                          <span className={cn("h-1.5 w-1.5 rounded-full", masteryDot[tech.mastery])} />
-                        </button>
-
-                        {isHovered && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 4 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.15 }}
-                            className="absolute left-0 top-full z-10 mt-1 w-64 rounded-lg border border-cyan/30 bg-elevated p-3 shadow-glow-cyan"
-                          >
-                            <p className="text-xs font-semibold text-cyan">
-                              {masteryLabel[tech.mastery]}
-                            </p>
-                            <p className="mt-1 text-xs leading-relaxed text-muted">
-                              {tech.useCase}
-                            </p>
-                          </motion.div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {steps.map((step) => (
+            <div
+              key={step.n}
+              className="rounded-2xl border border-line bg-panel p-6"
+            >
+              <p className="font-mono text-xs text-cyan">{step.n}</p>
+              <h3 className="mt-2 font-display text-xl font-semibold text-ink">
+                {step.title}
+              </h3>
+              <p className="mt-3 text-muted">{step.body}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-6 min-h-[1.5rem] text-center font-mono text-xs text-faint">
-          {hoveredItem ? `${hoveredItem.label} → ${hoveredItem.dependsOn.length} connected technologies` : ""}
+        <div className="mt-12 max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-wider text-cyan">Stacks I Build With</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {tools.map((tool) => (
+              <span
+                key={tool}
+                className="rounded-full border border-line-soft px-3 py-1.5 text-sm text-ink"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-// import ParticleCanvas from "./ParticleCanvas";
-// import ScrambleText from "./ScrambleText";
 import Magnetic from "@/components/shared/Magnetic";
 import { heroContent } from "@/lib/data";
 
@@ -23,7 +21,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden border-b border-line"
+      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden border-b border-line px-6 sm:px-10"
     >
       <div className="absolute inset-0 bg-radial-fade" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.08),transparent_50%)]" />
@@ -32,9 +30,9 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 pt-32 sm:px-10"
+        className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center pt-32"
       >
-        {/* Replace the old ScrambleText line with this */}
+        
       <motion.div 
         variants={item} 
         className="mb-6 flex items-center gap-3 font-sans text-sm font-semibold uppercase tracking-wider text-cyan"
@@ -105,7 +103,7 @@ export default function Hero() {
         variants={item}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-10 sm:px-10"
+        className="relative z-10 mx-auto w-full max-w-6xl pb-10"
       >
         {/* <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4 shadow-xl">
           {heroContent.metrics.map((metric) => (

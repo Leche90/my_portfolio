@@ -25,13 +25,7 @@ export const heroContent = {
   ],
   headlineLines: ["Your site should make the next step obvious", "on a phone, in under three seconds."],
   subhead:
-    "I am Lanzema Leche, a web developer in Winnipeg. I design and build marketing sites, catalogs, and simple products for people who cannot afford a vague six-month build. You get a clear structure, fast pages, and a site you can actually update.",
-  metrics: [
-    { label: "Based in", value: "Winnipeg" },
-    { label: "First version", value: "Weeks" },
-    { label: "Built for", value: "Phones" },
-    { label: "You talk to", value: "Me" }
-  ]
+    "I am Lanzema Leche, a web developer in Winnipeg. I design and build web and mobbile applications for businesses, organisations, and brands alike. I create solutions for those who cannot afford a vague six-month build. You get a clear structure, fast pages, and a site you can actually update.",
 };
 
 // ---- Projects -----------------------------------------------------------
@@ -61,6 +55,7 @@ export type PerfMetric = {
 
 export type Project = {
   slug: string;
+  liveUrl?: string;
   name: string;
   tagline: string;
   description: string;
@@ -227,6 +222,7 @@ export const projects: Project[] = [
   {
     slug: "kingmakers",
     name: "Kingmakers International Ministries",
+    liveUrl: "https://www.kingmakersinternationalministries.com",
     tagline: "All-in-one church management and communications platform",
     description: "A church site built from a blank page. Belief, vision, events, address, online giving, and live stream sit on one site so a first-time visitor knows where they are and what to do next.",
     stack: ["React", "TypeScript", "Vite", "CSS Systems", "Cloud Deployment"],

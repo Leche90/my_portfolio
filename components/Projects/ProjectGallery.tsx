@@ -12,19 +12,19 @@ export default function ProjectGallery() {
 
   return (
     <section id="projects" className="border-b border-line px-6 py-16 sm:px-10">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="w-full max-w-none"
         >
           <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
             Projects I've Built
           </h2>
-          <p className="mt-4 text-balance text-muted">
-            AI matching for Nigerian teachers seeking jobs abroad. A website for a snack brand sells from. A church site with events, giving, and live stream.
+          <p className="mt-4 text-lg text-muted w-full max-w-none">
+            I do not build generic templates or locked-down agency placeholders. Every application below represents a custom digital pipeline engineered to eliminate operational bottlenecks, capture mobile revenue at checkout, or scale community engagement. Instead of masking performance with stock imagery, I invite you to explore the raw system architectures, live lighthouse metrics, and processing speeds behind my recent deployments.
           </p>
         </motion.div>
 
